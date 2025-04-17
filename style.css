@@ -1,0 +1,348 @@
+:root {
+    --primary: #050505;
+    --oppositergb: 209, 213, 222, 0.2;
+    --secondary: ##f6b6c0;
+    --accent: #657153;
+    --textcolor: #d1d5de;
+    --mono: monospace;
+    --main: "dorsa";
+    --phones: 768px;
+  }
+  
+  * {
+    padding: 0;
+    margin: 0;
+  }
+  html {
+    scroll-behavior: smooth !important;
+  }
+  body {
+    color: var(--textcolor);
+    font-family: var(--mono);
+    font-weight: 600;
+  
+    background-color: var(--primary);
+    background-image: linear-gradient(
+        to right,
+        rgb(var(--oppositergb)) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, rgb(var(--oppositergb)) 1px, transparent 1px);
+    background-size: 5vw 5vw;
+  }
+  
+  body.lightmode {
+    --primary: #d1d5de;
+    --secondary: ##f6b6c0;
+    --accent: #657153;
+    --textcolor: #050505;
+    --oppositergb: 5, 5, 5, 0.2;
+  }
+  
+  /**** NAVBAR ****/
+  
+  nav {
+    height: 5vh;
+    position: fixed;
+    top: 0;
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0px 10px;
+    z-index: 99;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  
+    transform: scaleX(0);
+    transform-origin: center;
+    animation: expandNav 1s ease-out forwards;
+    animation-delay: 1s;
+  }
+  
+  @keyframes expandNav {
+    to {
+      transform: scaleX(1);
+    }
+  }
+  
+  .navwithinnav {
+    width: clamp(400px, 50vw, 600px);
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    backdrop-filter: blur(100px) saturate(1.5);
+    border-radius: 30px;
+    box-shadow: 0px 0px 5px rgb(var(--oppositergb));
+    box-sizing: border-box;
+    padding: 10px;
+    margin-top: 10px;
+  }
+  
+  @media (min-width: 2100px) {
+    nav .navlinks a {
+      font-size: clamp(8px, 5vh, 20px) !important;
+    }
+  
+    nav .navlogo button span {
+      font-size: clamp(8px, 5vh, 40px) !important;
+    }
+  }
+  
+  nav .navwithinnav .navlogo {
+    display: flex;
+    gap: 10px;
+  }
+  
+  nav .navwithinnav .navlogo button {
+    cursor: crosshair;
+    border: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background: 0;
+  }
+  
+  nav .navwithinnav .navlogo span {
+    color: var(--textcolor);
+  }
+  
+  nav .navwithinnav .navlogo button span:hover {
+    color: var(--accent) !important;
+  }
+  
+  nav .navlinks {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav .navlinks a {
+    text-decoration: none;
+    color: inherit !important;
+    font-size: clamp(8px, 3vh, 10px);
+    text-transform: uppercase;
+    margin: 0px 5px;
+  }
+  
+  nav .navlinks a:hover {
+    color: var(--accent) !important;
+  }
+  
+  /**** HEADER ****/
+  
+  header {
+    width: 100%;
+    height: 100vh;
+    padding-top: 10vh;
+    box-sizing: border-box;
+    position: relative;
+  }
+  
+  header .container {
+    left: 10vw;
+    position: absolute;
+    bottom: 10vh;
+    max-width: 50%;
+  }
+  
+  header h1 {
+    text-transform: uppercase;
+    font-size: clamp(50px, 80vh, 30em);
+    font-family: "dorsa";
+    line-height: 0.8em;
+  }
+  
+  .fade-text span {
+    opacity: 0;
+    display: inline-block;
+    animation: fadeWords 0.5s ease forwards;
+  }
+  
+  .fade-text span:nth-child(1) {
+    animation-delay: 0.2s;
+  }
+  .fade-text span:nth-child(2) {
+    animation-delay: 0.4s;
+  }
+  /* ...and so on */
+  
+  @keyframes fadeWords {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @media (min-width: 3200px) {
+    header h1 {
+      font-size: clamp(50px, 80vw, 70em);
+    }
+  }
+  
+  @media (max-width: 1344px) {
+    header h1 {
+      font-size: clamp(50px, 80vw, 20em);
+    }
+  }
+  
+  @media (max-width: 960px) {
+    header h1 {
+      font-size: clamp(50px, 80vw, 10em);
+    }
+  }
+  
+  @media (max-width: 336px) {
+    header h1 {
+      font-size: clamp(50px, 80vw, 5em);
+    }
+  }
+  
+  .header h2 {
+    font-size: clamp(1em, 1vw, 6em);
+  }
+  
+  /*** aboutme  ***/
+  
+  aboutme {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    padding-top: 10vh;
+    box-sizing: border-box;
+    position: absolute;
+    top: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    text-align: center;
+    font-family: "dorsa";
+    font-size: 40px;
+  }
+  
+  .aboutme h1 span {
+    opacity: 0;
+    display: inline-block;
+    animation: fadeWords 0.5s ease forwards;
+  }
+  
+  .aboutme h1 span:nth-child(1) {
+    animation-delay: 0.2s;
+  }
+  .aboutme h1 span:nth-child(2) {
+    animation-delay: 0.4s;
+  }
+  /* ...and so on */
+  
+  @keyframes fadeWords {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  projects {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    padding-top: 10vh;
+    box-sizing: border-box;
+    position: absolute;
+    top: 200vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  projects .thiswillbetheslideshow {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    box-sizing: border-box;
+  }
+  
+  projects .thiswillbetheslideshow .aproject {
+    max-width: 100%;
+    flex: 1 0 24%;
+    border-radius: 30px;
+    box-sizing: border-box;
+    padding: 10px;
+    position: relative;
+  }
+  
+  projects .thiswillbetheslideshow .aproject img {
+    max-width: 100%;
+    border-radius: 20px 20px 0px 0px;
+    object-fit: COVER;
+  }
+  
+  projects .thiswillbetheslideshow .aproject H1 {
+    font-family: "DORSA";
+    text-transform: uppercase;
+    font-size: 10vh;
+  }
+  
+  projects .thiswillbetheslideshow .aproject a {
+    background: red;
+    display: inline-block;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 30px;
+    padding: 5px 10px;
+    color: white;
+    background: black;
+  }
+  
+  projects .thiswillbetheslideshow .aproject#howspecial {
+    background-color: DARKGREY;
+  }
+  
+  projects .thiswillbetheslideshow .aproject#howcute {
+    background-color: GREY;
+  }
+  
+  contactme {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    padding-top: 10vh;
+    box-sizing: border-box;
+    position: absolute;
+    top: 300vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  contactme .leftside {
+    width: 45%;
+    text-align: right;
+  }
+  
+  contactme .leftside a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  contactme .leftside a:hover {
+    color: var(--accent);
+  }
+  
+  contactme .rightside {
+    width: 45%;
+    text-transform: uppercase;
+  }
+  
+  contactme .rightside h1 {
+    font-family: "dorsa";
+    font-size: 30vh;
+  }
+  
