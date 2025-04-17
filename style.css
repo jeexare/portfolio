@@ -20,7 +20,6 @@
     color: var(--textcolor);
     font-family: var(--mono);
     font-weight: 600;
-  
     background-color: var(--primary);
     background-image: linear-gradient(
         to right,
@@ -39,7 +38,13 @@
     --oppositergb: 5, 5, 5, 0.2;
   }
   
-  /**** NAVBAR ****/
+  /* 
+  
+  
+  N A V B A R 
+  
+  
+  */
   
   nav {
     height: 5vh;
@@ -130,7 +135,13 @@
     color: var(--accent) !important;
   }
   
-  /**** HEADER ****/
+  /* 
+  
+  
+  H E A D E R 
+  
+  
+  */
   
   header {
     width: 100%;
@@ -159,6 +170,8 @@
     display: inline-block;
     animation: fadeWords 0.5s ease forwards;
   }
+
+  /*TODO: Make this with JS I bet it's way easier and cleaner, a transition that makes every letter appear once at a time*/
   
   .fade-text span:nth-child(1) {
     animation-delay: 0.2s;
@@ -166,7 +179,6 @@
   .fade-text span:nth-child(2) {
     animation-delay: 0.4s;
   }
-  /* ...and so on */
   
   @keyframes fadeWords {
     to {
@@ -203,8 +215,13 @@
     font-size: clamp(1em, 1vw, 6em);
   }
   
-  /*** aboutme  ***/
+ /* 
   
+  
+  A B O U T     M E 
+  
+  
+  */
   aboutme {
     display: block;
     width: 100%;
@@ -228,6 +245,7 @@
     animation: fadeWords 0.5s ease forwards;
   }
   
+  /* TODO:  Again, make this with JS, but make a different transition than the one on the header cause that's hecka boring */
   .aboutme h1 span:nth-child(1) {
     animation-delay: 0.2s;
   }
@@ -242,6 +260,14 @@
       transform: translateY(0);
     }
   }
+
+   /* 
+  
+  
+  P R O J E C T S 
+  
+  
+  */
   
   projects {
     display: block;
@@ -309,6 +335,15 @@
     background-color: GREY;
   }
   
+
+   /* 
+  
+  
+  C O N T A C T      M E 
+  
+  
+  */
+
   contactme {
     display: block;
     width: 100%;

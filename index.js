@@ -1,4 +1,25 @@
-// switch lang button
+
+/**********************************
+ * 
+ * 
+ * TODO: Make the regular content of the page appear
+ * 
+ */
+
+/**********************************
+ * 
+ * 
+ * TODO: Make the content of the projects appear
+ * 
+ */
+
+/**********************************
+ * 
+ * 
+ * BUTTON TO SWITCH THE LANGUAGE OF THE PAGE
+ * TODO: Make the code cleaner
+ * 
+ */
 const switchButton = document.getElementById("switch-lang");
 
 function setLanguage() {
@@ -39,7 +60,14 @@ switchButton.addEventListener("click", (e) => {
   }
 });
 
-// switch mode button
+
+/**********************************
+ * 
+ * 
+ * BUTTON TO SWITCH THE MODE OF THE PAGE
+ * TODO: Make the code cleaner
+ * 
+ */
 const modeButton = document.getElementById("switch-mode");
 
 function setMode() {
@@ -56,9 +84,3 @@ modeButton.addEventListener("click", (e) => {
   else localStorage.removeItem("lightMode", "true");
   setMode();
 });
-
-// fade in scroll about me
-
-/*function splitTextWords (element)  {
-  const myWords = 
-}*/
