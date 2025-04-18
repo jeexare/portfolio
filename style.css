@@ -176,14 +176,6 @@
     animation: fadeWords 0.5s ease forwards;
   }
 
-  /*TODO: Make this with JS I bet it's way easier and cleaner, a transition that makes every letter appear once at a time*/
-  
-  /* .fade-text span:nth-child(1) {
-    animation-delay: 0.2s;
-  }
-  .fade-text span:nth-child(2) {
-    animation-delay: 0.4s;
-  } */ */
   
   @keyframes fadeWords {
     to {
@@ -230,16 +222,24 @@
   aboutme {
     display: block;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     padding-top: 10vh;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 50px;
-    text-align: center;
     font-family: "dorsa";
-    font-size: 40px;
+    font-size: 44px;
+    letter-spacing: 3px;
+    line-height: 1.3;
+    text-align: center;
+  }
+
+  @media (max-width: 960px) {
+    aboutme h1 {
+      font-size: 32px;
+    }
   }
   
   .aboutme h1 span {
@@ -294,6 +294,9 @@
   projects #thiswillbetheslideshow .aproject {
     max-width: 100%;
     flex: 1 0 35%;
+    padding:20px;
+    box-sizing: border-box;
+    transition:ease-in-out .3s;
   }
   
   projects #thiswillbetheslideshow .aproject.small {}
@@ -312,9 +315,26 @@
     text-transform: uppercase;
     font-size: 10vh;
   }
+
   
+  @media (max-width: 960px) {
+    .aproject h1 {
+      font-size: clamp(20px, 12vh, 46px)!important;
+    }
+  }
 
 
+.aproject a {
+    color:inherit!important;
+    text-decoration: none;
+
+}
+
+.aproject:hover {
+    background:rgb(var(--oppositergb));
+    transition:ease-in-out .3s;
+    border-radius:10%;
+}
    /* 
   
   
@@ -326,7 +346,7 @@
   contactme {
     display: block;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     padding-top: 10vh;
     box-sizing: border-box;
     display: flex;
@@ -355,6 +375,11 @@
   
   contactme #rightside h1 {
     font-family: "dorsa";
-    font-size: 30vh;
+    font-size: clamp(30px, 50vw, 250px);
   }
   
+  @media (max-width: 960px) {
+    contactme #rightside h1 {
+        font-size: clamp(30px, 26vw, 174px);
+    }
+  }

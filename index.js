@@ -222,9 +222,9 @@ function createProjects(lang) {
     projectList.forEach(project => {
         const projectHTML = `
           <div class="aproject ${project.kind}">
-            <img src="${project.img}" alt="${project.name}">
-            <h1><a href="${project.link}">${project.name}</a></h1>
-            <p>${project.description}</p>
+          <a href="${project.link}"><img src="${project.img}" alt="${project.name}">
+            <h1>${project.name}</h1>
+            <p>${project.description}</p></a>
           </div>
         `;
         myProjects.innerHTML += projectHTML;
