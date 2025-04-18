@@ -84,7 +84,7 @@
   }
   
   @media (min-width: 2100px) {
-    nav .navlinks a {
+    nav #navlinks a {
       font-size: clamp(8px, 5vh, 20px) !important;
     }
   
@@ -117,13 +117,13 @@
     color: var(--accent) !important;
   }
   
-  nav .navlinks {
+  nav #navlinks {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
   
-  nav .navlinks a {
+  nav #navlinks a {
     text-decoration: none;
     color: inherit !important;
     font-size: clamp(8px, 3vh, 10px);
@@ -131,7 +131,7 @@
     margin: 0px 5px;
   }
   
-  nav .navlinks a:hover {
+  nav #navlinks a:hover {
     color: var(--accent) !important;
   }
   

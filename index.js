@@ -6,8 +6,56 @@
  * 
  */
 
-// Grab the header
+
+const myNav = document.getElementById('navlinks');
 const myHeader = document.getElementById('posheader');
+const myAboutMe = document.getElementById('posaboutme');
+
+/**
+ * Creates navigation links based on the provided language and array of links.
+ * This function will only create links if the current language (from localStorage) matches the provided `lang`.
+ * 
+ * @param {string} lang - The language ('eng' or 'spa') for which to create the navigation links.
+ * @param {Array} links - An array of objects representing the navigation items, where each object has:
+ *   - title (string): The text content of the link.
+ *   - link (string): The href attribute for the link.
+ * 
+ * This function clears the existing navigation, sets the language attribute, and appends the new links.
+ */
+
+function createNavInfo(lang, links) {
+    const currentLang = localStorage.getItem("myLang");
+    if (currentLang !== lang) return null;
+    myNav.innerHTML = '';
+    myNav.setAttribute('mylang', lang);
+    links.forEach(({ title, link }) => {
+        const a = document.createElement('a');
+         a.href = link;
+          a.textContent = title;
+          myNav.appendChild(a);
+        });
+}
+
+/**
+ * Calls `createNavInfo` for both English and Spanish navigation links.
+ * This function generates the navigation links for both languages based on the passed arrays.
+ * 
+ * @param {Array} array1 - An array of objects representing the navigation items in English.
+ *   Each object should have:
+ *   - title (string): The text content of the link.
+ *   - link (string): The href attribute for the link.
+ * 
+ * @param {Array} array2 - An array of objects representing the navigation items in Spanish.
+ *   Each object should have:
+ *   - title (string): The text content of the link.
+ *   - link (string): The href attribute for the link.
+ * 
+ * This function calls `createNavInfo` for both English and Spanish, passing the corresponding arrays and language code.
+ */
+function createNav(array1, array2) {
+    createNavInfo('eng', array1);
+    createNavInfo('spa', array2);
+}
 
 /**
  * Creates an HTML heading element (e.g., <h1>) where each letter of the given words
@@ -79,9 +127,6 @@ function createHeaderInfo(lang, title, subtitle) {
     if  (spaHeader)  myHeader.appendChild(spaHeader);
   }
 
-  const myAboutMe = document.getElementById('posaboutme');
-  console.log(myAboutMe);
-
   /**
  * Creates an <h1> element containing a paragraph of "about me" text for a specific language.
  * Only generates the element if the provided language matches the current language in localStorage ("myLang").
@@ -136,6 +181,24 @@ const switchButton = document.getElementById("switch-lang");
 
 function setLanguage() {
   // Re-create only the header for the selected language
+  const array1 = [
+    { title: 'Home', link: '#posheader' },
+    { title: 'About Me', link: '#posaboutme' },
+    { title: 'Projects', link: '#posprojects' },
+    { title: 'Contact Me', link: '#poscontactme' }
+  ];
+  
+  const array2 = [
+    { title: 'Inicio', link: '#posheader' },
+    { title: 'Sobre Mi', link: '#posaboutme' },
+    { title: 'Proyectos', link: '#posprojects' },
+    { title: 'Contactame', link: '#poscontactme' }
+  ];
+  
+  // Now call createNav() with the arrays
+  createNav(array1, array2);
+
+
   createHeader("web development", "and then this", "desarrollo web", "y luego esto");
   createAboutMe("Hi there! I'm Gabriela Rubio — a CS student at the University of Utah who’s passionate about making programming both aesthetic and functional. I'm a proud hobby-hopper who loves trying all sorts of things, and I think my code should reflect that creative chaos. So here’s my portfolio — check it out if you think we can twin! bye world!", "¡Hola! Soy Gabriela Rubio, estudiante de CS en la Universidad de Utah, y me apasiona hacer que la programación sea tanto estética como funcional. Me encanta probar de todo como hobby, y creo que mi código debe reflejar ese caos creativo. Así que aquí está mi portafolio, ¡échale un vistazo si crees que podemos match! Bye world!")
 }
