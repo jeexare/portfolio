@@ -3,7 +3,7 @@ const projects = {
         {
             "name": "Tomorrow is Nearly Yesterday",
             "description": "This custom-designed skin for Foroactivo.com immerses users in a sci-fi, time-travel-themed roleplay environment. Crafted entirely with HTML, CSS, and JavaScript.",
-            "link": "tiny-rpg.foroactivo.com",
+            "link": "https://tiny-rpg.foroactivo.com",
             "img": "/assets/tiny.png",
             "kind": "big",
         },
@@ -48,7 +48,7 @@ const projects = {
         {
             "name": "Tomorrow is Nearly Yesterday",
             "description": "Este tema personalizado para Foroactivo.com sumerge a los usuarios en un entorno de rol temático de ciencia ficción y viajes en el tiempo. Creada completamente con HTML, CSS y JavaScript.",
-            "link": "tiny-rpg.foroactivo.com",
+            "link": "https://tiny-rpg.foroactivo.com",
             "img": "/assets/tiny.png",
             "kind": "big",
         },
