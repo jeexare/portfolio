@@ -1,15 +1,9 @@
-
-/**********************************
- * 
- * 
- * TODO: Make the regular content of the page appear
- * 
- */
-
+import content from './content.js';
 
 const myNav = document.getElementById('navlinks');
 const myHeader = document.getElementById('posheader');
 const myAboutMe = document.getElementById('posaboutme');
+const switchButton = document.getElementById("switch-lang");
 
 /**
  * Creates navigation links based on the provided language and array of links.
@@ -170,56 +164,26 @@ function createHeaderInfo(lang, title, subtitle) {
  * 
  */
 
-/**********************************
+
+/**
+ * Switches the language of the page between English and Spanish.
+ * When the button is clicked, the language preference is saved in localStorage,
+ * and the page content is updated accordingly based on the selected language.
  * 
- * 
- * BUTTON TO SWITCH THE LANGUAGE OF THE PAGE
- * TODO: Make the code cleaner
- * 
+ * @event switchButton - Triggers when the language switch button is clicked.
+ * It checks the current language in localStorage:
+ *   - If it's set to "eng", it switches to "spa".
+ *   - If it's set to "spa", it switches to "eng".
+ * Then, it reloads the content of the page using the updated language setting.
  */
-const switchButton = document.getElementById("switch-lang");
-
-function setLanguage() {
-  // Re-create only the header for the selected language
-  const array1 = [
-    { title: 'Home', link: '#posheader' },
-    { title: 'About Me', link: '#posaboutme' },
-    { title: 'Projects', link: '#posprojects' },
-    { title: 'Contact Me', link: '#poscontactme' }
-  ];
-  
-  const array2 = [
-    { title: 'Inicio', link: '#posheader' },
-    { title: 'Sobre Mi', link: '#posaboutme' },
-    { title: 'Proyectos', link: '#posprojects' },
-    { title: 'Contactame', link: '#poscontactme' }
-  ];
-  
-  // Now call createNav() with the arrays
-  createNav(array1, array2);
-
-
-  createHeader("web development", "and then this", "desarrollo web", "y luego esto");
-  createAboutMe("Hi there! I'm Gabriela Rubio — a CS student at the University of Utah who’s passionate about making programming both aesthetic and functional. I'm a proud hobby-hopper who loves trying all sorts of things, and I think my code should reflect that creative chaos. So here’s my portfolio — check it out if you think we can twin! bye world!", "¡Hola! Soy Gabriela Rubio, estudiante de CS en la Universidad de Utah, y me apasiona hacer que la programación sea tanto estética como funcional. Me encanta probar de todo como hobby, y creo que mi código debe reflejar ese caos creativo. Así que aquí está mi portafolio, ¡échale un vistazo si crees que podemos match! Bye world!")
-}
-
-setLanguage();
-if (!localStorage.getItem("myLang")) {
-  localStorage.setItem("myLang", "eng");
-}
 
 switchButton.addEventListener("click", (e) => {
   let currentLang = localStorage.getItem("myLang");
 
-  if (currentLang === "eng") {
-    console.log("ahora spa");
-    localStorage.setItem("myLang", "spa");
-    setLanguage();
-  } else {
-    console.log("ahora eng");
-    localStorage.setItem("myLang", "eng");
-    setLanguage();
-  }
+  if (currentLang === "eng") localStorage.setItem("myLang", "spa");
+   else localStorage.setItem("myLang", "eng");
+
+  loadContent();
 });
 
 
@@ -246,3 +210,18 @@ modeButton.addEventListener("click", (e) => {
   else localStorage.removeItem("lightMode", "true");
   setMode();
 });
+
+
+async function loadContent() {
+
+    const currentLang = localStorage.getItem("myLang") || "eng"; // Default to 'eng' if not set
+      createNav(content.eng.navLinks, content.spa.navLinks);
+      createHeader(content.eng.header.title, content.eng.header.subtitle, content.spa.header.title, content.spa.header.subtitle);
+      createAboutMe(content.eng.aboutMe.paragraph, content.spa.aboutMe.paragraph);
+  }
+
+  if (!localStorage.getItem("myLang")) {
+    localStorage.setItem("myLang", "eng");
+  }
+  
+  loadContent();
