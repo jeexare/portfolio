@@ -255,12 +255,14 @@ switchButton.addEventListener("click", (e) => {
 });
 
 
-/**********************************
+/**
+ * Applies the saved light mode preference to the document body.
  * 
- * 
- * BUTTON TO SWITCH THE MODE OF THE PAGE
- * TODO: Make the code cleaner
- * 
+ * Checks localStorage for the key "lightMode". If the key exists,
+ * the "lightmode" class is added to the body to enable light mode styling.
+ * If the key does not exist, the "lightmode" class is removed, defaulting to dark mode.
+ *
+ * This function should be called on page load to apply the correct theme.
  */
 
 function setMode() {
@@ -269,16 +271,33 @@ function setMode() {
   else document.body.classList.add("lightmode");
 }
 
-setMode();
-
+/**
+ * Toggles the light mode setting when the mode button is clicked.
+ * 
+ * If "lightMode" is not found in localStorage, it adds the key to enable light mode.
+ * If the key exists, it removes it to revert to dark mode.
+ * After updating localStorage, it calls setMode() to apply the new theme.
+ *
+ * This allows users to switch between light and dark mode manually.
+ */
 modeButton.addEventListener("click", (e) => {
   let mode = localStorage.getItem("lightMode");
   if (!mode) localStorage.setItem("lightMode", "true");
-  else localStorage.removeItem("lightMode", "true");
+  else localStorage.removeItem("lightMode");
   setMode();
 });
 
 
+/**
+ * Loads and renders multilingual content based on the saved language preference.
+ * 
+ * Retrieves the user's preferred language from localStorage ("myLang").
+ * Then dynamically populates the webpage sections (navigation, header, about me, 
+ * contact me, and projects) with the appropriate English and Spanish content.
+ * 
+ * This function supports dynamic switching and rendering of bilingual site content.
+ * Should be called on page load or after language preference changes.
+ */
 async function loadContent() {
      let currentLang = localStorage.getItem("myLang");
       createNav(content.eng.navLinks, content.spa.navLinks);
@@ -293,4 +312,5 @@ async function loadContent() {
   }
   
   loadContent();
+  setMode();
   AOS.init();
