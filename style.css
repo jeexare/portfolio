@@ -1,7 +1,7 @@
 :root {
     --primary: #050505;
     --oppositergb: 209, 213, 222, 0.2;
-    --secondary: ##f6b6c0;
+    --secondary: #f6b6c0;
     --accent: #657153;
     --textcolor: #d1d5de;
     --mono: monospace;
@@ -36,16 +36,6 @@
     --accent: #657153;
     --textcolor: #050505;
     --oppositergb: 5, 5, 5, 0.2;
-  }
-
-  .hidden {
-    opacity:0;
-    transition:ease-in-out .5s;
-  }
-  
-  .visible {
-    opacity:1;
-    /* transition:ease-in-out .5; */
   }
 
   /* 
@@ -180,12 +170,6 @@
     white-space:nowrap;
     display: inline-block;
   }
-   /* .fade-text span {
-    opacity: 0;
-    display: inline-block;
-    animation: fadeWords 0.5s ease forwards;
-  } */
-
   
   @keyframes fadeWords {
     to {
@@ -229,7 +213,7 @@
   
   
   */
-  aboutme {
+  section.aboutme {
     display: block;
     width: 100%;
     min-height: 100vh;
@@ -247,14 +231,9 @@
   }
 
   @media (max-width: 960px) {
-    aboutme h1 {
+    section.aboutme h1 {
       font-size: 32px;
     }
-  }
-  
-  .aboutme h1 span {
-    opacity: 0;
-    display: inline-block;
   }
 
    /* 
@@ -265,7 +244,7 @@
   
   */
   
-  projects {
+  section.projects {
     display: block;
     width: 100%;
     padding-top: 10vh;
@@ -275,7 +254,7 @@
     align-items: center;
   }
   
-  projects #thiswillbetheslideshow {
+  section.projects #thiswillbetheslideshow {
     width: 70%;
     display: flex;
     justify-content: space-around;
@@ -284,24 +263,22 @@
     box-sizing: border-box;
   }
   
-  projects #thiswillbetheslideshow .aproject {
+  section.projects #thiswillbetheslideshow .aproject {
     max-width: 100%;
     flex: 1 0 35%;
    
   }
-  
-  projects #thiswillbetheslideshow .aproject.small {}
 
-  projects #thiswillbetheslideshow .aproject.big {
+  section.projects #thiswillbetheslideshow .aproject.big {
     flex: 1 0 100%;
   }
 
-  projects #thiswillbetheslideshow .aproject img {
+  section.projects #thiswillbetheslideshow .aproject img {
     width: 100%;
     object-fit: COVER;
   }
   
-  projects #thiswillbetheslideshow .aproject H1 {
+  section.projects #thiswillbetheslideshow .aproject H1 {
     font-family: "DORSA";
     text-transform: uppercase;
     font-size: 10vh;
@@ -338,7 +315,7 @@
   
   */
 
-  contactme {
+  section.contactme {
     display: block;
     width: 100%;
     min-height: 100vh;
@@ -349,32 +326,32 @@
     justify-content: space-between;
   }
   
-  contactme .leftside {
+  section.contactme .leftside {
     width: 45%;
     text-align: right;
   }
   
-  contactme .leftside a {
+  section.contactme .leftside a {
     color: inherit;
     text-decoration: none;
   }
   
-  contactme .leftside a:hover {
+  section.contactme .leftside a:hover {
     color: var(--accent);
   }
   
-  contactme #rightside {
+  section.contactme #rightside {
     width: 45%;
     text-transform: uppercase;
   }
   
-  contactme #rightside h1 {
+  section.contactme #rightside h1 {
     font-family: "dorsa";
     font-size: clamp(30px, 50vw, 250px);
   }
   
   @media (max-width: 960px) {
-    contactme #rightside h1 {
+    section.contactme #rightside h1 {
         font-size: clamp(30px, 26vw, 174px);
     }
   }
