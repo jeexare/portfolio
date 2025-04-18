@@ -233,8 +233,6 @@
     height: 100vh;
     padding-top: 10vh;
     box-sizing: border-box;
-    position: absolute;
-    top: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -277,69 +275,45 @@
   projects {
     display: block;
     width: 100%;
-    height: 100vh;
     padding-top: 10vh;
     box-sizing: border-box;
-    position: absolute;
-    top: 200vh;
     display: flex;
     justify-content: center;
     align-items: center;
   }
   
-  projects .thiswillbetheslideshow {
-    width: 90%;
-    height: 90%;
+  projects #thiswillbetheslideshow {
+    width: 70%;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 100px 30px;
     box-sizing: border-box;
   }
   
-  projects .thiswillbetheslideshow .aproject {
+  projects #thiswillbetheslideshow .aproject {
     max-width: 100%;
-    flex: 1 0 24%;
-    border-radius: 30px;
-    box-sizing: border-box;
-    padding: 10px;
-    position: relative;
+    flex: 1 0 35%;
   }
   
-  projects .thiswillbetheslideshow .aproject img {
-    max-width: 100%;
-    border-radius: 20px 20px 0px 0px;
+  projects #thiswillbetheslideshow .aproject.small {}
+
+  projects #thiswillbetheslideshow .aproject.big {
+    flex: 1 0 100%;
+  }
+
+  projects #thiswillbetheslideshow .aproject img {
+    width: 100%;
     object-fit: COVER;
   }
   
-  projects .thiswillbetheslideshow .aproject H1 {
+  projects #thiswillbetheslideshow .aproject H1 {
     font-family: "DORSA";
     text-transform: uppercase;
     font-size: 10vh;
   }
   
-  projects .thiswillbetheslideshow .aproject a {
-    background: red;
-    display: inline-block;
-    box-sizing: border-box;
-    position: absolute;
-    bottom: 10px;
-    text-decoration: none;
-    text-transform: uppercase;
-    border-radius: 30px;
-    padding: 5px 10px;
-    color: white;
-    background: black;
-  }
-  
-  projects .thiswillbetheslideshow .aproject#howspecial {
-    background-color: DARKGREY;
-  }
-  
-  projects .thiswillbetheslideshow .aproject#howcute {
-    background-color: GREY;
-  }
-  
+
 
    /* 
   
@@ -355,8 +329,6 @@
     height: 100vh;
     padding-top: 10vh;
     box-sizing: border-box;
-    position: absolute;
-    top: 300vh;
     display: flex;
     align-items: center;
     justify-content: space-between;

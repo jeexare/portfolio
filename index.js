@@ -1,10 +1,13 @@
 import content from './content.js';
+import projects from './projects.js';
 
 const myNav = document.getElementById('navlinks');
 const myHeader = document.getElementById('posheader');
 const myAboutMe = document.getElementById('posaboutme');
 const myContactMe = document.getElementById('rightside');
+const myProjects = document.getElementById("thiswillbetheslideshow");
 const switchButton = document.getElementById("switch-lang");
+
 
 /**
  * Creates navigation links based on the provided language and array of links.
@@ -205,13 +208,32 @@ function createHeaderInfo(lang, title, subtitle) {
     if (spaContactMe) myContactMe.appendChild(spaContactMe);
   }
 
-/**********************************
+/**
+ * Generates and injects project cards into the DOM based on the selected language.
  * 
+ * @param {string} lang - The language key to select which set of projects to display (e.g., 'eng', 'spa').
  * 
- * TODO: Make the content of the projects appear
- * 
+ * This function:
+ * - Clears the current contents of the `myProjects` container.
+ * - Loops through the projects array for the specified language.
+ * - Dynamically creates HTML for each project, including name, image, description, and link.
+ * - Appends each project card to the DOM.
  */
+function createProjects(lang) {
+    myProjects.innerHTML = '';
+    const projectList = projects[lang];
 
+    projectList.forEach(project => {
+        const projectHTML = `
+          <div class="aproject ${project.kind}">
+            <img src="${project.img}" alt="${project.name}">
+            <h1><a href="${project.link}">${project.name}</a></h1>
+            <p>${project.description}</p>
+          </div>
+        `;
+        myProjects.innerHTML += projectHTML;
+      });
+}
 
 /**
  * Switches the language of the page between English and Spanish.
@@ -261,10 +283,12 @@ modeButton.addEventListener("click", (e) => {
 
 
 async function loadContent() {
+     let currentLang = localStorage.getItem("myLang");
       createNav(content.eng.navLinks, content.spa.navLinks);
       createHeader(content.eng.header.title, content.eng.header.subtitle, content.spa.header.title, content.spa.header.subtitle);
       createAboutMe(content.eng.aboutMe.paragraph, content.spa.aboutMe.paragraph);
       createContactMe(content.eng.contactMe.title, content.eng.contactMe.subtitle, content.spa.contactMe.title, content.spa.contactMe.subtitle);
+      createProjects(currentLang);
   }
 
   if (!localStorage.getItem("myLang")) {
