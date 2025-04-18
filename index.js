@@ -25,7 +25,6 @@ function createNavInfo(lang, links) {
     const currentLang = localStorage.getItem("myLang");
     if (currentLang !== lang) return null;
     myNav.innerHTML = '';
-    myNav.setAttribute('mylang', lang);
     links.forEach(({ title, link }) => {
         const a = document.createElement('a');
          a.href = link;
@@ -97,7 +96,6 @@ function createHeaderInfo(lang, title, subtitle) {
     if (currentLang !== lang) return null;
     const div = document.createElement('div');
     div.classList.add('container', 'fade-text');
-    div.setAttribute('mylang', lang);
     const h1 = addFadeWords('h1', title);
     const h2 = document.createElement('h2');
     h2.textContent = subtitle;
@@ -139,7 +137,6 @@ function createHeaderInfo(lang, title, subtitle) {
     if (currentLang !== lang) return null;
 
     const h1 = document.createElement('h1');
-    h1.setAttribute('mylang', lang);
     h1.textContent = paragraph;
 
     return h1;
@@ -176,7 +173,6 @@ function createHeaderInfo(lang, title, subtitle) {
     if (currentLang != lang) return null;
 
     const div = document.createElement('div');
-    div.setAttribute('mylang', lang);
 
     const h1Elem = document.createElement('h1');
     h1Elem.textContent = h1;
