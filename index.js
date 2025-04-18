@@ -7,7 +7,7 @@ const myAboutMe = document.getElementById('posaboutme');
 const myContactMe = document.getElementById('rightside');
 const myProjects = document.getElementById("thiswillbetheslideshow");
 const switchButton = document.getElementById("switch-lang");
-
+const modeButton = document.getElementById("switch-mode");
 
 /**
  * Creates navigation links based on the provided language and array of links.
@@ -71,9 +71,9 @@ function addFadeWords(myElement, myWords) {
         [...word].forEach((letter, index) => {
             const span = document.createElement('span');
             span.textContent = letter;
+            span.setAttribute('data-aos',"zoom-in");
+            span.setAttribute('data-aos-easing',"ease-in-quad");
             wordSpan.appendChild(span);
-            span.style.animation = 'fadeWords 0.5s ease forwards';
-            span.style.animationDelay = `${index * 0.1}s`; 
         });
         h1.appendChild(wordSpan);
         h1.appendChild(document.createTextNode(' '));
@@ -136,8 +136,10 @@ function createHeaderInfo(lang, title, subtitle) {
     const currentLang = localStorage.getItem("myLang");
     if (currentLang !== lang) return null;
 
-    const h1 = document.createElement('h1');
-    h1.textContent = paragraph;
+    const h1 = addFadeWords('h1', paragraph);
+    // document.createElement('h1');
+    
+    // h1.textContent = paragraph;
 
     return h1;
   }
@@ -221,7 +223,7 @@ function createProjects(lang) {
 
     projectList.forEach(project => {
         const projectHTML = `
-          <div class="aproject ${project.kind}">
+          <div class="aproject ${project.kind}" data-aos="fade-up" data-aos-duration="8000" data-aos-easing="ease-in-quad">
           <a href="${project.link}"><img src="${project.img}" alt="${project.name}">
             <h1>${project.name}</h1>
             <p>${project.description}</p></a>
@@ -260,7 +262,6 @@ switchButton.addEventListener("click", (e) => {
  * TODO: Make the code cleaner
  * 
  */
-const modeButton = document.getElementById("switch-mode");
 
 function setMode() {
   let mode = localStorage.getItem("lightMode");
@@ -292,3 +293,4 @@ async function loadContent() {
   }
   
   loadContent();
+  AOS.init();

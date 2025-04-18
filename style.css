@@ -37,7 +37,17 @@
     --textcolor: #050505;
     --oppositergb: 5, 5, 5, 0.2;
   }
+
+  .hidden {
+    opacity:0;
+    transition:ease-in-out .5s;
+  }
   
+  .visible {
+    opacity:1;
+    /* transition:ease-in-out .5; */
+  }
+
   /* 
   
   
@@ -170,11 +180,11 @@
     white-space:nowrap;
     display: inline-block;
   }
-   .fade-text span {
+   /* .fade-text span {
     opacity: 0;
     display: inline-block;
     animation: fadeWords 0.5s ease forwards;
-  }
+  } */
 
   
   @keyframes fadeWords {
@@ -245,23 +255,6 @@
   .aboutme h1 span {
     opacity: 0;
     display: inline-block;
-    animation: fadeWords 0.5s ease forwards;
-  }
-  
-  /* TODO:  Again, make this with JS, but make a different transition than the one on the header cause that's hecka boring */
-  .aboutme h1 span:nth-child(1) {
-    animation-delay: 0.2s;
-  }
-  .aboutme h1 span:nth-child(2) {
-    animation-delay: 0.4s;
-  }
-  /* ...and so on */
-  
-  @keyframes fadeWords {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
   }
 
    /* 
@@ -294,9 +287,7 @@
   projects #thiswillbetheslideshow .aproject {
     max-width: 100%;
     flex: 1 0 35%;
-    padding:20px;
-    box-sizing: border-box;
-    transition:ease-in-out .3s;
+   
   }
   
   projects #thiswillbetheslideshow .aproject.small {}
@@ -327,10 +318,14 @@
 .aproject a {
     color:inherit!important;
     text-decoration: none;
+    padding:50px;
+    box-sizing: border-box;
+    transition:ease-in-out .3s;
+    display: block;
 
 }
 
-.aproject:hover {
+.aproject a:hover {
     background:rgb(var(--oppositergb));
     transition:ease-in-out .3s;
     border-radius:10%;
