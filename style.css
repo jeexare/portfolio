@@ -376,12 +376,12 @@
     color: var(--accent);
   }
   
-  contactme .rightside {
+  contactme #rightside {
     width: 45%;
     text-transform: uppercase;
   }
   
-  contactme .rightside h1 {
+  contactme #rightside h1 {
     font-family: "dorsa";
     font-size: 30vh;
   }

@@ -13,6 +13,10 @@ const portfolioContent = {
       aboutMe: {
         paragraph:
           "Hi there! I'm Gabriela Rubio — a CS student at the University of Utah who’s passionate about making programming both aesthetic and functional. I'm a proud hobby-hopper who loves trying all sorts of things, and I think my code should reflect that creative chaos. So here’s my portfolio — check it out if you think we can twin! Bye world!"
+      },
+      contactMe: {
+        title: "let's make something fun",
+        subtitle: "say hi"
       }
     },
     spa: {
@@ -29,9 +33,12 @@ const portfolioContent = {
       aboutMe: {
         paragraph:
           "¡Hola! Soy Gabriela Rubio, estudiante de CS en la Universidad de Utah, y me apasiona hacer que la programación sea tanto estética como funcional. Me encanta probar de todo como hobby, y creo que mi código debe reflejar ese caos creativo. Así que aquí está mi portafolio, ¡échale un vistazo si crees que podemos match! Bye world!"
+      },
+      contactMe: {
+        title: "Creemos algo divertido!",
+        subtitle: "di hola"
       }
     }
   };
   
   export default portfolioContent;
-  

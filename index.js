@@ -3,6 +3,7 @@ import content from './content.js';
 const myNav = document.getElementById('navlinks');
 const myHeader = document.getElementById('posheader');
 const myAboutMe = document.getElementById('posaboutme');
+const myContactMe = document.getElementById('rightside');
 const switchButton = document.getElementById("switch-lang");
 
 /**
@@ -157,6 +158,53 @@ function createHeaderInfo(lang, title, subtitle) {
     if (engAboutMe) myAboutMe.appendChild(engAboutMe);
     if  (spaAboutMe)  myAboutMe.appendChild(spaAboutMe);
   }
+
+  /** Creates a <div> element containing an <h3> and <h1> text for a specific language.
+   * Only generates de element  if the provided language matches  the current language in localStorage ("myLang"),
+   * 
+   * @param {string}  lang - Languague code for the content
+   * @param  {string} h1 - The text content to be displayed in the <h1>
+   * @param {string} h3 - The text content to be displayed in the <h3>
+   * @returns {HTMLElement|null} The generated <div> element or null if the language doesn't mach
+   */
+
+  function createContactMeInfo (lang, h1, h3) {
+    const currentLang = localStorage.getItem("myLang");
+    if (currentLang != lang) return null;
+
+    const div = document.createElement('div');
+    div.setAttribute('mylang', lang);
+
+    const h1Elem = document.createElement('h1');
+    h1Elem.textContent = h1;
+
+    const h3Elem = document.createElement('h3');
+    h3Elem.textContent = h3;
+
+    div.appendChild(h3Elem);
+    div.appendChild(h1Elem);
+
+    return div;
+  }
+
+  /** Creates and appends "Contact Me" sections for both English and Spanish,
+   * dependind on the current language set in localStorage ("myLang").
+   * Only the matching section will be created and appended to the myContactMe element.
+   * 
+   * @param {string} title1 - The English title.
+   * @param {string} subtitle1 - The English subtitle.
+   * @param {string} title2 - The Spanish title.
+   * @param {string} subtitle2 - The Spanish subtitle.
+   */
+
+  function createContactMe (title1, subtitle1, title2, subtitle2) {
+    myContactMe.innerHTML =  "";
+    const engContactMe = createContactMeInfo("eng", title1, subtitle1);
+    const spaContactMe = createContactMeInfo("spa", title2, subtitle2);
+    if (engContactMe) myContactMe.appendChild(engContactMe);
+    if (spaContactMe) myContactMe.appendChild(spaContactMe);
+  }
+
 /**********************************
  * 
  * 
@@ -213,11 +261,10 @@ modeButton.addEventListener("click", (e) => {
 
 
 async function loadContent() {
-
-    const currentLang = localStorage.getItem("myLang") || "eng"; // Default to 'eng' if not set
       createNav(content.eng.navLinks, content.spa.navLinks);
       createHeader(content.eng.header.title, content.eng.header.subtitle, content.spa.header.title, content.spa.header.subtitle);
       createAboutMe(content.eng.aboutMe.paragraph, content.spa.aboutMe.paragraph);
+      createContactMe(content.eng.contactMe.title, content.eng.contactMe.subtitle, content.spa.contactMe.title, content.spa.contactMe.subtitle);
   }
 
   if (!localStorage.getItem("myLang")) {
