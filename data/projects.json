@@ -1,0 +1,25 @@
+[{
+        "href": "https://tiny-rpg.foroactivo.com/",
+        "image": "/TINYRPG.png",
+        "title": "TINYRPG",
+        "desc": "Custom-designed theme for Foroactivo.com. Inmerses users in a sci-fi, time-traveled-themed roleplay environment. Crafted entirely with HTML, CSS, and JavaScript."
+    },
+    {
+        "href": "https://ink-and-ember.vercel.app/",
+        "image": "/Ink-and-Ember.png",
+        "title": "Ink & Ember",
+        "desc": "A sleek, responsive website designed for a fictional coffeeshop. Built with Tailwind CSS and ReactJS to showcase modern design principles, reusable components, and client-first thinking."
+    },
+    {
+        "href": "https://quizcamphalfblood.vercel.app/",
+        "image": "/CampHalfBloodQuiz.png",
+        "title": "Camp Half-Blood Quiz",
+        "desc": "Personality-style quiz inspired by the Percy Jackson series. Users answer 20 everyday scenario questions to discover their Greek god parent. Built with React and Tailwind CSS, featuring dynamic scoring and responsive design."
+    },
+    {
+        "href": "https://github.com/jeexare/tower-defense",
+        "image": "/TowerDefense.png",
+        "title": "Tower Defense Game",
+        "desc": "Developed as the final project for CS1420 at the University of Utah. Players strategically place towers to prevent enemies from reaching their destination. The game features multiple levels, tower upgrades, and enemy waves. Created with Java."
+    }
+]
