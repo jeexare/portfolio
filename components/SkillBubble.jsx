@@ -1,4 +1,4 @@
-export default function SkillBubble({ x, y, angle, icon: IconComponent, color, skill, level }) {
+export default function SkillBubble({ x, y, angle, icon: IconComponent, color, skill, size }) {
  const handleMouseEnter = (e) => {
       e.currentTarget.style.transform = `rotate(${-angle}rad) scale(1.5)`;
       e.currentTarget.style.zIndex = 10;
@@ -12,7 +12,7 @@ export default function SkillBubble({ x, y, angle, icon: IconComponent, color, s
     return (
       <div
         key={skill}
-        title={`${skill} — ${level}% proficiency`}
+        title={`${skill}`}
         className="
           absolute
           rounded-full
@@ -25,7 +25,7 @@ export default function SkillBubble({ x, y, angle, icon: IconComponent, color, s
           duration-300
           ease-in-out
           text-white
-          text-[36px]
+          text-lg
           pointer-events-auto
           z-10
           "
@@ -39,7 +39,7 @@ export default function SkillBubble({ x, y, angle, icon: IconComponent, color, s
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        <IconComponent size={36} color={color} />
+        <IconComponent size={size} color={color} />
       </div>
     );
   }

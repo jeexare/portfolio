@@ -1,15 +1,17 @@
 'use client';
 import { motion } from "framer-motion";
+import CTAButton from "./CTAButton";
 
 export default function Hero({ heroRef, showLogo }) {
   return (
     <div
       ref={heroRef}
-      className="bg-[#6F2DBD] text-white font-sans uppercase h-[calc(100vh-100px)] flex flex-col items-center justify-center gap-10 relative z-10"
+      className="text-2xl md:text-4xl bg-[#6F2DBD] text-white font-sans uppercase h-[calc(100vh-100px)] relative z-10"
     >
+      <div className="flex flex-col items-center justify-center gap-10 h-full">
       <h1>Hello. I'm</h1>
 
-      <div className="w-[200px]">
+      <div className="w-[200px] md:w-3/6 lg:h-1/2">
         <img
           src="https://placehold.co/600x800/333/31343C"
           className="object-cover w-full h-full"
@@ -19,18 +21,22 @@ export default function Hero({ heroRef, showLogo }) {
 
       <motion.h2
         layoutId="logo-name"
-        className="absolute w-[calc(100vw-50px)] flex justify-between z-10"
+        className="absolute w-[calc(100vw-50px)] md:w-5/6 md:text-7xl  lg:w-4/6 flex justify-between z-10 text-4xl"
         style={{
           transform: showLogo
             ? 'translateX(-50vw) translateY(-30vh) scale(0.2)'
             : 'translateX(0) translateY(0) scale(1)',
           transition: 'all .8s ease',
+          
         }}
       >
         <span>Gabriela</span> <span>Rubio</span>
       </motion.h2>
 
       <p>I build digital worlds</p>
+      </div>
+      <CTAButton />
     </div>
+
   );
 }

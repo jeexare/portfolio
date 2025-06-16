@@ -7,13 +7,17 @@ export default function Navbar({ onToggle, scrolled }) {
 
   return (
     <nav
-      className="w-full h-full flex justify-end items-center gap-[5px] font-sans uppercase text-[12px]"
+      className="w-full h-full flex justify-end items-center gap-[5px] font-sans text-[12px] xl:justify-center"
     >
-      <div className="hidden">
+      <div className="hidden
+      xl:flex
+        xl:items-center
+        xl:w-full
+        xl:justify-between">
         <Navigation />
       </div>
 
-      <div className="block">
+      <div className="block xl:hidden">
         <motion.button
           onClick={onToggle}
           whileHover={{ scale: 1.1 }}

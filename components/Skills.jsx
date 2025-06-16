@@ -8,9 +8,10 @@ export default function Skills() {
         bg-black
         flex
         justify-center
-        items-center"
+        items-center
+        min-h-screen"
       style={{
-        height: `calc(100vh - 100px)`,
+        height: ``,
       }}
     >
       <SkillsCircle />

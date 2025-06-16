@@ -18,7 +18,9 @@ export default function HamburgerMenu({ onClose }) {
         box-border
         p-[30px_50px_50px_10px]
         gap-5
-        text-[25px]
+        text-2xl
+        md:text-5xl
+        md:gap-10
         font-sans
         z-[999]
         shadow-[0_0_10px_1px_black]
@@ -29,7 +31,8 @@ export default function HamburgerMenu({ onClose }) {
         className="
           self-start
           bg-transparent border-none
-          text-[30px]
+          text-3xl
+
           text-white
           cursor-pointer
         "

@@ -52,7 +52,7 @@ export default function About() {
     <div
       id="about"
       ref={ref}
-      className="bg-[#6F2DBD] text-white h-[calc(100vh-100px)] box-border p-[40px_80px_40px_40px] flex items-center text-[35px] font-sans break-words flex-wrap"
+      className="bg-[#6F2DBD] text-white min-h-[calc(100vh-100px)] box-border p-[40px_80px_40px_40px] flex items-center text-5xl md:text-7xl font-sans break-words flex-wrap"
     >
       <motion.div
         variants={containerVariants}

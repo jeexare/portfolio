@@ -1,9 +1,33 @@
+import { useEffect, useState } from "react";
 import { skills } from "/data/skills";
 import SkillBubble from "./SkillBubble";
 import SkillsCircleContainer from "./SkillsCircleContainer";
 
 export default function SkillsCircle() {
-  const radius = 120;
+  const [radius, setRadius] = useState(getRadiusFromVW());
+  const [size, setSize] = useState(getSizeFromVW());
+
+  function getRadiusFromVW() {
+    const vw = window.innerWidth;
+    return vw * .3; // for example, 15% of viewport width
+  }
+
+  function getSizeFromVW() {
+    const vw = window.innerWidth;
+    return Math.max(24, Math.min(80, vw * 0.05)); // for example, 15% of viewport width
+  }
+
+  useEffect(() => {
+    const handleResize = () => {
+      setRadius(getRadiusFromVW());
+      setSize(getSizeFromVW());
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+console.log(radius);
   const center = radius;
   const bubbleSize = 50;
   const padding = bubbleSize / 2;
@@ -25,7 +49,7 @@ export default function SkillsCircle() {
             icon={icon}
             color={color}
             skill={skill}
-            level={level}
+            size={size}
           />
         );
       })}
