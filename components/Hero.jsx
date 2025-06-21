@@ -6,7 +6,7 @@ export default function Hero({ heroRef, showLogo }) {
   return (
     <div
       ref={heroRef}
-      className="text-2xl md:text-4xl bg-[#6F2DBD] text-white font-sans uppercase h-[calc(100vh-100px)] relative z-10"
+      className="text-2xl md:text-4xl text-white font-sans uppercase h-[calc(100vh-100px)] relative z-10 bg-[#6F2DBD]"
     >
       <div className="flex flex-col items-center justify-center gap-10 h-full">
       <h1>Hello. I'm</h1>
@@ -21,7 +21,7 @@ export default function Hero({ heroRef, showLogo }) {
 
       <motion.h2
         layoutId="logo-name"
-        className="absolute w-[calc(100vw-50px)] md:w-5/6 md:text-7xl  lg:w-4/6 flex justify-between z-10 text-4xl"
+        className="absolute w-[calc(100vw-50px)] md:w-5/6 md:text-7xl  lg:w-4/6 flex justify-between z-10 text-4xl pink-grad font-outfit font-bold"
         style={{
           transform: showLogo
             ? 'translateX(-50vw) translateY(-30vh) scale(0.2)'

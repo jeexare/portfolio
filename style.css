@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 @import "tailwindcss";
 * {
     /* margin: 0;
@@ -8,4 +9,17 @@
 body,
 html {
     overflow-x: hidden;
+    background-color: #1E2D24;
+}
+
+.pink-grad {
+    background: -webkit-linear-gradient(45deg, #F9B4ED, #C52184);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.font-outfit {
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
