@@ -1,5 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
 @import "tailwindcss";
+:root {
+    --black-base: #1B1E24;
+    --soft-white: #E6E0DC;
+    --cool-gray: #52595e;
+    --accent-white: #FFFFFF;
+    --tint: #E5E5E5;
+    --base: var(--black-base);
+    --accent: var(--accent-white);
+    --accent2: #282D31;
+    --text: var(--soft-white);
+}
+
 * {
     /* margin: 0;
     padding: 0; */
@@ -9,7 +25,8 @@
 body,
 html {
     overflow-x: hidden;
-    background-color: #1E2D24;
+    background-color: var(--base);
+    color: var(--text);
 }
 
 .pink-grad {
@@ -21,5 +38,112 @@ html {
 .font-outfit {
     font-family: "Outfit", sans-serif;
     font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.font-fraunces {
+    font-family: "Fraunces", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "SOFT" 0, "WONK" 0;
+}
+
+.font-space {
+    font-family: "Space Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.font-playfair {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.cool-grad {
+    background: linear-gradient( 120deg, #fcb1ff 0%, #ff6ec4 25%, #7873f5 50%, #6ee2f5 75%, #fcb1ff 100%);
+    background-size: 200% 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 6s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.pop-grad {
+    background: linear-gradient(135deg, #F9D423, #FF4E50, #FC354C, #0ABFBC);
+    background-size: 250% 250%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 7s ease infinite;
+}
+
+.gold-grad {
+    background: linear-gradient(120deg, #d4af37, #f2e1c1, #c9b037);
+    background-size: 200% 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 10s ease infinite;
+}
+
+.space-grad {
+    background: linear-gradient(135deg, #8E2DE2, #4A00E0, #00C9FF, #92FE9D);
+    background-size: 300% 300%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 8s ease-in-out infinite;
+}
+
+.neon-grad {
+    background: linear-gradient(90deg, #00F260, #0575E6, #00F260);
+    background-size: 200% 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 6s linear infinite;
+}
+
+.sunset-grad {
+    background: linear-gradient(120deg, #F9B4ED, #FF6EC7, #FFD6EC);
+    background-size: 200% 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 5s ease infinite;
+}
+
+.my-grad {
+    background: linear-gradient(120deg, #F9B4ED, #C96DD8, #6D83F2, #96F2F2);
+    background-size: 250% 250%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 7s ease-in-out infinite;
+}
+
+.font-cookie {
+    font-family: "Cookie", cursive;
+    font-weight: 400;
     font-style: normal;
 }

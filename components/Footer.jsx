@@ -5,10 +5,9 @@ export default function Footer({
   return (
     <div
       className="
-        text-gray-600 
+        text-[var(--cool-gray)] 
         p-5
-        font-sans
-        bg-[#B9FAF8]
+        font-space
         box-content"
     >
       &copy; {year} {text}

@@ -5,7 +5,7 @@ export default function CTAButton() {
   return (
     <motion.a
     href="#about"
-      className="w-12 h-12 block mx-auto relative cursor-pointer ext-gray-500 bg-[rgb(255,255,255,.1)] rounded-full flex items-center justify-center"
+      className="w-12 h-12 block mx-auto relative cursor-pointer ext-gray-500 bg-[var(--soft-white)] text-[var(--base)]  rounded-full flex items-center justify-center"
       animate={{
         y: [0, -10, 0], // move up 10px and back down
         rotate: [0, 5, 0, -5, 0], // slight rotation to wobble side to side

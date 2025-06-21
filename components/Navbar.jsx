@@ -23,9 +23,9 @@ export default function Navbar({ onToggle, scrolled }) {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           transition={{ type: "spring", stiffness: 300 }}
-          className="rounded-full border-0 flex items-center justify-center w-[50px] h-[50px] text-[15px] text-black"
+          className="rounded-full border-0 flex items-center justify-center w-[50px] h-[50px] text-[15px]"
           style={{
-            background: scrolled ? `transparent` : `rgb(255,255,255,.3)`,
+            background: scrolled ? `transparent` : `var(--accent2)`,
             backdropFilter: scrolled ? `none` : `blur(10px)`,
           }}
         >

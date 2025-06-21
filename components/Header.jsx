@@ -23,9 +23,8 @@ export default function Header({ menuOpen, setMenuOpen, showLogo }) {
         className={`
           fixed flex justify-center items-center px-2 box-border overflow-hidden z-[98]
           transition-all duration-600 ease-in-out
-          ${scrolled ? 'bg-[rgb(255,255,255,.2)] shadow-[0_0_5px_2px_rgba(0,0,0,0.5)] backdrop-blur-5xl top-[10px] left-[10px] w-[calc(100vw-20px)] h-[50px] xl:h-[60px] rounded-[40px]'
-                    : 'bg-[#6F2DBD] top-0 left-0 w-screen h-[80px] rounded-none'}
-          text-white
+          ${scrolled ? 'bg-[rgb(0,0,0,.3)] shadow-[0_0_5px_2px_rgba(0,0,0,0.5)] backdrop-blur-5xl top-[10px] left-[10px] w-[calc(100vw-20px)] h-[50px] xl:h-[60px] rounded-[40px]'
+                    : 'top-0 left-0 w-screen h-[80px] rounded-none'}
         `}
         style={{
           // fallback for backdrop-filter in some browsers
@@ -34,7 +33,7 @@ export default function Header({ menuOpen, setMenuOpen, showLogo }) {
       >
         <motion.div
           layoutId="logo-name"
-          className="flex justify-center items-center whitespace-nowrap text-[10px] lowercase font-sans font-bold h-full"
+          className="flex justify-center items-center whitespace-nowrap text-[10px] lowercase font-space font-bold h-full"
           style={{
             width: 'fit-content',
             transform: showLogo

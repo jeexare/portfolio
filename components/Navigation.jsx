@@ -12,7 +12,7 @@ export default function Navigation() {
     const options = {
       root: null,
       rootMargin: "0px",
-      threshold: 0.6, // section must be 60% visible to trigger
+      threshold: 0.6, 
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -35,35 +35,6 @@ export default function Navigation() {
       <>
         <div className="xl:flex-1 xl:flex xl:justify-center">
           <div className="xl:flex xl:gap-2 text-right">
-          {/* {sections.map((section) => (
-        <motion.a
-          key={section}
-          href={`#${section}`}
-        animate={{
-            paddingRight: isSmallScreen && activeSection === section ? "100px" : "20px",
-            paddingRight: !isSmallScreen === section ? "20px" : "",
-            backgroundColor: !isSmallScreen && activeSection === section ? "rgb(255,255,255,.2)" : "transparent",
-          }}
-          transition={{
-            duration: 0.2,
-            ease: "easeInOut",
-          }}
-          className={`
-              no-underline 
-              w-full 
-              border-r border-solid text-right xl:text-xl xl:border-r-0
-              xl:px-5
-              xl:py-2
-              xl:rounded-full
-              xl:text-black
-              ${isSmallScreen && activeSection === section ?"text-[#B9FAF8] border-r-white" : "text-white border-r-[#B9FAF8]"}
-              ${activeSection === section ? "xl:bg-[rgb(255,255,255,.2)]" : ""}
-              `}
-          whileHover={{ scale: 1.03 }}
-        >
-          {section.charAt(0).toUpperCase() + section.slice(1)}
-        </motion.a>
-      ))} */}
 
 {sections.map((section) => (
             <div key={section} className="xl:relative">
@@ -83,7 +54,8 @@ export default function Navigation() {
                   xl:relative xl:z-10 no-underline w-full text-right 
                   xl:text-xl xl:px-5 xl:py-2 xl:rounded-full xl:text-black
                   border-r border-solid xl:border-r-0
-                  ${isSmallScreen && activeSection === section ?"text-[#B9FAF8] border-r-white" : "text-white border-r-[#B9FAF8]"}
+                  font-space
+                  ${isSmallScreen && activeSection === section ?"text-[var(--text)] border-r-[var(--text)]" : "text-[var(--cool-gray)] border-r-[var(--cool-gray)]"}
                 `}
                 whileHover={{ scale: 1.03 }}
               >

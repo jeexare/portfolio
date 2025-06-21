@@ -11,9 +11,9 @@ export default function HamburgerMenu({ onClose }) {
       exit={{ x: "100%" }}
       transition={{ type: "spring", stiffness: 300, damping: 30 }}
       className="
+      bg-[var(--base)]
         fixed top-0 right-0 h-screen
         w-[calc(100vw-100px)]
-        bg-[#101010] text-white
         flex flex-col justify-start items-end
         box-border
         p-[30px_50px_50px_10px]
@@ -32,9 +32,8 @@ export default function HamburgerMenu({ onClose }) {
           self-start
           bg-transparent border-none
           text-3xl
-
-          text-white
           cursor-pointer
+          text-[var(--cool-gray)]
         "
         aria-label="Close menu"
       >

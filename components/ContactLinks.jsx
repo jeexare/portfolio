@@ -11,7 +11,7 @@ export default function ContactLinks() {
     <div className="flex flex-col justify-center gap-2.5">
       <a
         href={links[0].href}
-        className="no-underline text-gray-500 text-3xl border-b-2 border-black w-fit"
+        className="no-underline text-[var(--cool-gray)] text-3xl border-b-2 border-[var(--cool-gray)] w-fit"
       >
         {links[0].label}
       </a>
@@ -20,7 +20,7 @@ export default function ContactLinks() {
           <a
             key={label}
             href={href}
-            className="no-underline text-gray-500 border-b-2 border-black mr-2.5"
+            className="no-underline text-[var(--cool-gray)] border-b-2 border-[var(--cool-gray)] mr-2.5"
           >
             {label}
           </a>

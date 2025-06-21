@@ -4,7 +4,6 @@ export default function SkillsCircleContainer({ children, size }) {
       className="
         relative
         rounded-full
-        bg-black
         overflow-visible
         mx-auto
         box-content"

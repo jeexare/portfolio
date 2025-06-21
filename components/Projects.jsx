@@ -57,7 +57,7 @@ export default function Projects() {
     <div
       id="projects"
       className="
-        bg-black 
+      bg-black
         h-auto
         box-border 
         p-2.5 
