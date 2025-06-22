@@ -40,7 +40,7 @@ function AnimatedProject({ project }) {
       initial="hidden"
       animate={controls}
       variants={variants}
-      className="w-full md:w-[calc(50%-8px)]"
+      className="w-full"
     >
       <Project
         href={project.href}
@@ -57,17 +57,17 @@ export default function Projects() {
     <div
       id="projects"
       className="
-      bg-black
         h-auto
         box-border 
         p-2.5 
-        flex 
-        flex-col 
-        gap-8
-        md:flex-row 
-        md:flex-wrap 
+        gap-3
         w-full
-        md:gap-3
+        grid
+        grid-cols-1
+        md:grid-cols-2
+        lg:grid-cols-3
+        xl:grid-cols-4
+        xl:px-30
         "
     >
       {projectsData.map((project, i) => (

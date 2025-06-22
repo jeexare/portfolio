@@ -5,13 +5,15 @@ export default function Skills() {
     <div
       id="skills"
       className="
-        bg-black
         flex
         justify-center
         items-center
-        min-h-screen"
+        min-h-screen
+        md:py-50
+        lg:py-68
+        xl:py-0
+        "
       style={{
-        height: ``,
       }}
     >
       <SkillsCircle />

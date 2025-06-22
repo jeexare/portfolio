@@ -32,13 +32,15 @@ export default function SkillBubble({ x, y, angle, icon: IconComponent, color, s
           text-lg
           pointer-events-auto
           z-10
+          w-12
+          h-12
+          md:w-15
+          md:h-15
           ${hovered ? "bg-[var(--base)]" : "bg-[var(--soft-white)]"}
           `}
         style={{
       top: y,
       left: x,
-      width: 50,
-      height: 50,
       transform: `rotate(${-angle}rad)`,
         }}
         onMouseEnter={handleMouseEnter}

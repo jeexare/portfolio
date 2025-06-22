@@ -9,12 +9,12 @@ export default function SkillsCircle() {
 
   function getRadiusFromVW() {
     const vw = window.innerWidth;
-    return vw * .3; // for example, 15% of viewport width
+    return vw * .25; // for example, 15% of viewport width
   }
 
   function getSizeFromVW() {
     const vw = window.innerWidth;
-    return Math.max(24, Math.min(80, vw * 0.05)); // for example, 15% of viewport width
+    return Math.max(24, Math.min(80, vw * 0.03)); // for example, 15% of viewport width
   }
 
   useEffect(() => {

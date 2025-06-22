@@ -4,7 +4,8 @@ import { IoSunny, IoLanguageSharp } from "react-icons/io5";
 
 const sections = ["about", "projects", "skills", "contact"];
 
-export default function Navigation() {
+export default function Navigation({ scrolled }) {
+
     const [activeSection, setActiveSection] = useState("");
     const isSmallScreen = window.innerWidth < 1280;
 
@@ -33,8 +34,13 @@ export default function Navigation() {
 
     return (
       <>
-        <div className="xl:flex-1 xl:flex xl:justify-center">
-          <div className="xl:flex xl:gap-2 text-right">
+        <div className="xl:flex-1 xl:flex xl:justify-center xl:h-full xl:items-center">
+          <div className={`xl:flex xl:gap-2 text-right xl:h-4/5 xl:items-center xl:px-10 xl:rounded-3xl
+          ${scrolled ? 'xl:bg-[rgb(0,0,0,.3)] xl:shadow-[0_0_5px_2px_rgba(0,0,0,0.5)] xl:backdrop-blur-5xl'
+          : ''}`}
+          style={{
+            backdropFilter: scrolled && !isSmallScreen ? 'blur(100px)' : 'none',
+          }}>
 
 {sections.map((section) => (
             <div key={section} className="xl:relative">
@@ -52,7 +58,7 @@ export default function Navigation() {
                 }}
                 className={`
                   xl:relative xl:z-10 no-underline w-full text-right 
-                  xl:text-xl xl:px-5 xl:py-2 xl:rounded-full xl:text-black
+                  xl:text-xl xl:px-5 xl:py-2 xl:rounded-full xl:text-[var(--text)]
                   border-r border-solid xl:border-r-0
                   font-space
                   ${isSmallScreen && activeSection === section ?"text-[var(--text)] border-r-[var(--text)]" : "text-[var(--cool-gray)] border-r-[var(--cool-gray)]"}

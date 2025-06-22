@@ -3,7 +3,7 @@ import { TbMenuDeep } from "react-icons/tb";
 import { motion } from "framer-motion";
 
 export default function Navbar({ onToggle, scrolled }) {
-  console.log("Navbar received scrolled:", scrolled);
+
 
   return (
     <nav
@@ -13,8 +13,9 @@ export default function Navbar({ onToggle, scrolled }) {
       xl:flex
         xl:items-center
         xl:w-full
-        xl:justify-between">
-        <Navigation />
+        xl:justify-between
+        xl:h-full">
+        <Navigation scrolled={scrolled}/>
       </div>
 
       <div className="block xl:hidden">

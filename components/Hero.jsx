@@ -6,7 +6,7 @@ export default function Hero({ heroRef, showLogo }) {
   return (
     <div
       ref={heroRef}
-      className="uppercase text-2xl md:text-4xl font-space h-[calc(100vh-100px)] relative z-10"
+      className="uppercase text-2xl md:text-4xl font-space h-[calc(100vh-100px)] md:h-[calc(100vh-50px)] relative z-10"
     >
       <div className="flex flex-col items-center justify-center gap-10 h-full">
       <h1>Hello. I'm</h1>
