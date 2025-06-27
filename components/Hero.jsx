@@ -13,7 +13,7 @@ export default function Hero({ heroRef, showLogo }) {
 
       <div className="w-[200px] md:w-3/6 lg:h-1/2">
         <img
-          src="https://placehold.co/600x800/a4a4a4/31343C"
+          src="/Portfolio.png"
           className="object-cover w-full h-full"
           alt="Hero image"
         />
