@@ -6,6 +6,7 @@ import { Analytics } from "@vercel/analytics/next"
 import Header from "/components/Header.jsx";
 import Layout from "/components/Layout.jsx";
 import Overlay from "/components/Overlay.jsx";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -35,6 +36,7 @@ export default function App() {
       {menuOpen && <Overlay />}
       <Layout heroRef={heroRef} showLogo={showLogo}  />
       <Analytics />
+      <SpeedInsights />
     </div>
   );
 }
