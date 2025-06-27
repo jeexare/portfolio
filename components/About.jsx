@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { motion, useAnimation } from "framer-motion";
 
-const text = [
+const textEng = [
   { content: "I’m", className: "" },
   { content: "a", className: "" },
   { content: "Utah-based", className: "" },
@@ -25,6 +25,30 @@ const text = [
   { content: "inspire", className: "" },
   { content: "me.", className: "" },
 ];
+
+const textSpa = [
+  { content: "Soy", className: "" },
+  { content: "desarrolladora", className: "pop-grad font-semibold font-space" },
+  { content: "de", className: "" },
+  { content: "software", className: "pop-grad font-semibold font-space" },
+  { content: "y", className: "" },
+  { content: "diseñadora", className: "cool-grad font-semibold font-cookie text-8xl md:text-7xl" },
+  { content: "que", className: "" },
+  { content: "crea", className: "" },
+  { content: "experiencias", className: "" },
+  { content: "web", className: "" },
+  { content: "interactivas.", className: "" },
+  { content: "Amo", className: "" },
+  { content: "trabajar", className: "" },
+  { content: "en", className: "" },
+  { content: "proyectos", className: "" },
+  { content: "que", className: "" },
+  { content: "me", className: "" },
+  { content: "desafían", className: "" },
+  { content: "e", className: "" },
+  { content: "inspiran.", className: "" },
+];
+
 
 export default function About() {
   const controls = useAnimation();
@@ -77,9 +101,41 @@ export default function About() {
         variants={containerVariants}
         initial="hidden"
         animate={controls}
-        style={{ display: "flex", flexWrap: "wrap" }}
+        className="about-eng"
+        style={{ flexWrap: "wrap" }}
       >
-        {text.map(({ content, className }, index) => (
+        {textEng.map(({ content, className }, index) => (
+          <motion.span
+            key={index}
+            variants={wordVariants}
+            className={className}
+            style={{
+              whiteSpace: "nowrap",
+              display: "inline-flex",
+              marginRight: "0.25em",
+            }}
+          >
+            {[...content].map((char, i) => (
+              <motion.span
+                key={i}
+                variants={letterVariants}
+                style={{ display: "inline-block" }}
+              >
+                {char}
+              </motion.span>
+            ))}
+          </motion.span>
+        ))}
+      </motion.div>
+
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate={controls}
+        className="about-spa"
+        style={{ flexWrap: "wrap" }}
+      >
+        {textSpa.map(({ content, className }, index) => (
           <motion.span
             key={index}
             variants={wordVariants}

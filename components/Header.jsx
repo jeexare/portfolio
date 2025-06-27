@@ -24,7 +24,7 @@ export default function Header({ menuOpen, setMenuOpen, showLogo }) {
         className={`
           fixed flex justify-center items-center px-2 box-border overflow-hidden z-[98]
           transition-all duration-600 ease-in-out
-          ${scrolled ? 'xl:bg-transparent bg-[rgb(0,0,0,.3)] xl:shadow-none shadow-[0_0_5px_2px_rgba(0,0,0,0.5)] xl:backdrop-blur-none backdrop-blur-5xl top-[10px] left-[10px] w-[calc(100vw-20px)] h-[50px] xl:h-[60px] rounded-[40px] xl:top-0 xl:left-0 xl:w-screen xl:rounded-none'
+          ${scrolled ? 'xl:bg-transparent bg-[var(--base-03)] xl:shadow-none shadow-[0_0_5px_2px_rgba(0,0,0,0.5)] xl:backdrop-blur-none backdrop-blur-5xl top-[10px] left-[10px] w-[calc(100vw-20px)] h-[50px] xl:h-[60px] rounded-[40px] xl:top-0 xl:left-0 xl:w-screen xl:rounded-none'
                     : 'top-0 left-0 w-screen h-[80px] rounded-none'}
         `}
         style={{

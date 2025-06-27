@@ -36,7 +36,7 @@ export default function SkillBubble({ x, y, angle, icon: IconComponent, color, s
           h-12
           md:w-15
           md:h-15
-          ${hovered ? "bg-[var(--base)]" : "bg-[var(--soft-white)]"}
+          ${hovered ? "bg-[var(--base)]" : "bg-[var(--accent)]"}
           `}
         style={{
       top: y,

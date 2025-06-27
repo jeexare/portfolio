@@ -47,6 +47,7 @@ function AnimatedProject({ project }) {
         image={project.image}
         title={project.title}
         desc={project.desc}
+        descSpa={project.descSpa}
       />
     </motion.div>
   );

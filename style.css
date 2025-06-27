@@ -9,17 +9,43 @@
     --soft-white: #E6E0DC;
     --cool-gray: #52595e;
     --accent-white: #FFFFFF;
+    --better-gray: #282D31;
     --tint: #E5E5E5;
+
     --base: var(--black-base);
+    --base-03: rgb(0,0,0,.3);
     --accent: var(--accent-white);
-    --accent2: #282D31;
+    --accent2: var(--better-gray);
     --text: var(--soft-white);
+}
+
+
+.light-theme {
+     --base: var(--soft-white);
+     --base-03: rgb(255,255,255,.3);
+    --accent: var(--better-gray);
+    --accent2: var(--accent-white);
+    --text: var(--black-base);
 }
 
 * {
     /* margin: 0;
     padding: 0; */
     box-sizing: border-box;
+}
+
+
+.hero-image {
+    filter: grayscale(1) brightness(0.4);
+}
+
+
+.light-theme .hero-image {
+    filter: grayscale(0) brightness(1);
+}
+
+.light-theme .logo-name {
+    color: var(--accent-white);
 }
 
 body,
@@ -146,4 +172,32 @@ html {
     font-family: "Cookie", cursive;
     font-weight: 400;
     font-style: normal;
+}
+
+.eng .text-eng {
+  display: block;
+}
+.eng .text-spa {
+  display: none;
+}
+
+.spa .text-eng {
+  display: none;
+}
+.spa .text-spa {
+  display: block;
+}
+
+.eng .about-eng {
+  display: flex;
+}
+.eng .about-spa {
+  display: none;
+}
+
+.spa .about-eng {
+  display: none;
+}
+.spa .about-spa {
+  display: flex;
 }

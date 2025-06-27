@@ -6,7 +6,7 @@ export default function CTAButton() {
     <motion.a
     href="#about"
      aria-label="Go down"
-      className="w-12 h-12 block mx-auto relative cursor-pointer ext-gray-500 bg-[var(--soft-white)] text-[var(--base)]  rounded-full flex items-center justify-center -top-20 md:top-1 xl:-top-10"
+      className="w-12 h-12 block mx-auto relative cursor-pointer ext-gray-500 bg-[var(--accent)] text-[var(--base)]  rounded-full flex items-center justify-center -top-20 md:top-1 xl:-top-10"
       animate={{
         y: [0, -10, 0], // move up 10px and back down
         rotate: [0, 5, 0, -5, 0], // slight rotation to wobble side to side

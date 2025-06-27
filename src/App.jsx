@@ -2,11 +2,11 @@
 
 import { useState, useEffect, useRef } from "react";
 
-import { Analytics } from "@vercel/analytics/next"
+// import { Analytics } from "@vercel/analytics/next"
 import Header from "/components/Header.jsx";
 import Layout from "/components/Layout.jsx";
 import Overlay from "/components/Overlay.jsx";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+// import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -35,8 +35,8 @@ export default function App() {
       <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} showLogo={showLogo}  />
       {menuOpen && <Overlay />}
       <Layout heroRef={heroRef} showLogo={showLogo}  />
-      <Analytics />
-      <SpeedInsights />
+      {/* <Analytics />
+      <SpeedInsights /> */}
     </div>
   );
 }

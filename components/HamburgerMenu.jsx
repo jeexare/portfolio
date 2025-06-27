@@ -23,7 +23,7 @@ export default function HamburgerMenu({ onClose }) {
         md:gap-10
         font-sans
         z-[999]
-        shadow-[0_0_10px_1px_black]
+     
       "
     >
       <button
