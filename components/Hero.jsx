@@ -15,6 +15,9 @@ export default function Hero({ heroRef, showLogo }) {
         <img
           src="/Portfolio.png"
           className="object-cover w-full h-full"
+          style={{
+            filter: `grayscale(1) brightness(0.4)`,
+          }}
           alt="Hero image"
         />
       </div>
