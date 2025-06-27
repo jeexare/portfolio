@@ -13,7 +13,7 @@ export default function Hero({ heroRef, showLogo }) {
 
       <div className="w-[200px] md:w-3/6 lg:h-1/2">
         <img
-          src="/Portfolio.png"
+          src="/Portfolio2.webp"
           className="object-cover w-full h-full"
           style={{
             filter: `grayscale(1) brightness(0.4)`,
