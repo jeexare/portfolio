@@ -2,7 +2,7 @@ import Navigation from "./Navigation";
 import { TbMenuDeep } from "react-icons/tb";
 import { motion } from "framer-motion";
 
-export default function Navbar({ onToggle, scrolled }) {
+export default function Navbar({ onToggle, scrolled, theme, setTheme, language, setLanguage }) {
 
 
   return (
@@ -15,7 +15,8 @@ export default function Navbar({ onToggle, scrolled }) {
         xl:w-full
         xl:justify-between
         xl:h-full">
-        <Navigation scrolled={scrolled}/>
+       <Navigation scrolled={scrolled} theme={theme} setTheme={setTheme} language={language} setLanguage={setLanguage} />
+
       </div>
 
       <div className="block xl:hidden">

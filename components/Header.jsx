@@ -18,6 +18,32 @@ export default function Header({ menuOpen, setMenuOpen, showLogo }) {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  const [theme, setTheme] = useState(() => {
+  if (typeof window !== "undefined") {
+    return localStorage.getItem("theme") || "dark";
+  }
+  return "dark";
+});
+
+useEffect(() => {
+  document.body.classList.toggle("light-theme", theme === "light");
+  localStorage.setItem("theme", theme);
+}, [theme]);
+
+
+    const [language, setLanguage] = useState(() => {
+
+    if (typeof window !== "undefined") {
+        return localStorage.getItem("language") || "eng";
+    }
+    return "eng";
+});
+
+ useEffect(() => {
+    document.documentElement.className = language;
+    localStorage.setItem("language", language);
+  }, [language]);
+
   return (
     <>
       <div
@@ -48,12 +74,13 @@ export default function Header({ menuOpen, setMenuOpen, showLogo }) {
         </motion.div>
 
         {/* <Logo /> */}
-        <Navbar onToggle={() => setMenuOpen(!menuOpen)} scrolled={scrolled} />
+        <Navbar onToggle={() => setMenuOpen(!menuOpen)} scrolled={scrolled} theme={theme} setTheme={setTheme} language={language} setLanguage={setLanguage}/>
       </div>
 
-      <AnimatePresence>
-        {menuOpen && <HamburgerMenu onClose={() => setMenuOpen(false)} />}
-      </AnimatePresence>
+    
+<AnimatePresence>
+  {menuOpen && <HamburgerMenu onClose={() => setMenuOpen(false)} theme={theme} setTheme={setTheme}  language={language} setLanguage={setLanguage}/>}
+</AnimatePresence>
     </>
   );
 }

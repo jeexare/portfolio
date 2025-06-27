@@ -3,7 +3,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import { motion } from "framer-motion";
 import Navigation from "./Navigation";
 
-export default function HamburgerMenu({ onClose }) {
+export default function HamburgerMenu({ onClose, theme, setTheme, language, setLanguage }) {
   return (
     <motion.div
       initial={{ x: "100%" }}
@@ -40,7 +40,8 @@ export default function HamburgerMenu({ onClose }) {
         <AiOutlineClose />
       </button>
 
-      <Navigation />
+     <Navigation theme={theme} setTheme={setTheme} language={language} setLanguage={setLanguage} />
+
     </motion.div>
   );
 }

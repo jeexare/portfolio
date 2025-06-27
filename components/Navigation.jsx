@@ -14,7 +14,7 @@ const sectionMapSpaToEng = {
   "contáctame": "contact"
 };
 
-export default function Navigation({ scrolled }) {
+export default function Navigation({ scrolled, theme, setTheme, language, setLanguage }) {
 
     const [activeSection, setActiveSection] = useState("");
     const isSmallScreen = window.innerWidth < 1280;
@@ -114,9 +114,9 @@ export default function Navigation({ scrolled }) {
 
       </div></div>
 
-      <div className="">
-      <SwitchThemeBtn />
-      <SwitchLanguageBtn />
+      <div className="gap-2 flex flex-col xl:flex-row xl:pr-10">
+      <SwitchThemeBtn theme={theme} setTheme={setTheme} />
+      <SwitchLanguageBtn  language={language} setLanguage={setLanguage} />
       </div>
       </>  
     );
