@@ -73,8 +73,8 @@ export default function Navigation({ scrolled }) {
       </div></div>
 
       <div className="">
-      <button><IoSunny /></button>
-      <button><IoLanguageSharp /></button>
+      <button aria-label="Switch Theme"><IoSunny /></button>
+      <button  aria-label="Switch Language"><IoLanguageSharp /></button>
       </div>
       </>  
     );

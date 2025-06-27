@@ -1,9 +1,9 @@
 const links = [
   { name: "Email", href: "mailto:hgrubiof@gmail.com", label: "hgrubiof@gmail.com" },
-  { name: "LinkedIn", href: "", label: "linkedin" },
-  { name: "GitHub", href: "", label: "github" },
-  { name: "Tumblr", href: "", label: "tumblr" },
-  { name: "CodePen", href: "", label: "codepen" },
+  { name: "LinkedIn", href: "https://www.linkedin.com/in/hgrubio/", label: "linkedin" },
+  { name: "GitHub", href: "https://github.com/jeexare", label: "github" },
+  { name: "Tumblr", href: "http://bluedrxgs.tumblr.com/", label: "tumblr" },
+  { name: "CodePen", href: "https://codepen.io/bluedrxgs", label: "codepen" },
 ];
 
 export default function ContactLinks() {
